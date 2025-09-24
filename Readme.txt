@@ -101,7 +101,11 @@ http://<minikube-ip>:30001/employees
 
 Note: On Docker driver/Windows, direct node IP access may not work; prefer minikube service or tunnel.
 
-6) Commands to redeploy / update image
+6) CI/CD Pipeline with Jenkins
+
+After successfully containerizing and deploying the Employee Management application locally, I integrated a Jenkins pipeline to automate the complete workflow.
+
+7) Commands to redeploy / update image
 
 Rebuild and push new image:
 
@@ -116,7 +120,7 @@ kubectl rollout status deployment/employee-api-deployment
 To rollback:
 kubectl rollout undo deployment/employee-api-deployment
 
-7) Cleanup commands
+8) Cleanup commands
 # delete k8s resources
 kubectl delete -f k8s/service.yaml
 kubectl delete -f k8s/deployment.yaml
@@ -130,11 +134,10 @@ docker rm employee1
 docker rmi siri2025/employee1:latest
 
 
-8) Common troubleshooting (short)
+9) Common troubleshooting (short)
 
 1) curl: Failed to connect — ensure the app process or container is running. Check docker ps or python app.py terminal.
 2) Docker errors / named pipe on Windows — start Docker Desktop and wait until it says “Docker is running.”
 3) Minikube NodePort not accessible — use minikube service or run minikube tunnel (for LoadBalancer).
 4) Image push denied — ensure docker login succeeded and you tagged image as siri2025/employee1:tag.
 5) Pod CrashLoopBackOff — kubectl logs <pod> and kubectl describe pod <pod> to see exception. Likely missing env, incorrect image tag, or port misconfiguration.
-
