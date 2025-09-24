@@ -9,11 +9,12 @@ pipeline {
 
   stages {
 
-    stage('Checkout Source') {
-      steps {
-        git 'https://github.com/DevOps-Projects12/K8s-Deployment.git'
-      }
-    }
+   stage('Checkout Source') {
+  steps {
+        credentialsId: 'github-creds',
+        url: 'https://github.com/DevOps-Projects12/K8s-Deployment.git'
+  }
+}
 
     stage('Build image') {
       steps{
