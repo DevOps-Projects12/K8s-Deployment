@@ -102,6 +102,7 @@ After successfully containerizing and deploying the Employee Management applicat
 Rebuild and push new image:
 
 docker build -t siri2025/employee1:v1.1 .
+
 docker push siri2025/employee1:v1.1
 
 Update Deployment to use new image and roll:
@@ -113,9 +114,11 @@ To rollback:
 kubectl rollout undo deployment/employee-api-deployment
 
 **8) Cleanup commands**
+
 **delete k8s resources**
 
 kubectl delete -f k8s/service.yaml
+
 kubectl delete -f k8s/deployment.yaml
 
 **stop minikube**
@@ -125,7 +128,9 @@ minikube stop
 **stop and remove docker container and image locally**
 
 docker stop employee1
+
 docker rm employee1
+
 docker rmi siri2025/employee1:latest
 
 
