@@ -1,5 +1,3 @@
-# K8s-Deployment
-
 Short summary:
 Flask-based Employee Management REST API. Containerized with Docker (siri2025/employee1) and deployed to Kubernetes (Minikube) via deployment.yaml and service.yaml. This README shows exactly how to run and verify the project locally, push the image to DockerHub, and deploy to Minikube.
 
