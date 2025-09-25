@@ -12,16 +12,6 @@ Flask-based Employee Management REST API. Containerized with Docker (siri2025/em
 - Git 
 - Python (only for local run, optional if you test only via Docker).
 
-**Repo layout:** 
-
-employee-management/
-├─ app.py
-├─ requirements.txt
-├─ Dockerfile
-├─ k8s/
-│  ├─ deployment.yaml
-│  └─ service.yaml
-└─ README.md
 
 **1) Run locally (quick smoke test)**
 
